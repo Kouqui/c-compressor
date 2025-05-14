@@ -1,7 +1,7 @@
 #ifndef UTIL_H
 #define UTIL_H
 
-#include <stdio.h>  // Garantindo que o tipo FILE seja reconhecido
+#include <stdio.h>  
 
 #include "arvore.h"
 
@@ -15,9 +15,9 @@ typedef struct fila_prioridade {
     int tamanho;
 } FilaPrioridade;
 
-void calcular_frequencia(FILE* arquivo, unsigned int frequencias[TAM_ALFABETO]);
-void inicializar_fila(FilaPrioridade* fila, unsigned int frequencias[TAM_ALFABETO]);
-void gerar_tabela_codigos(No* raiz, Codigo tabela[TAM_ALFABETO], Codigo atual);
+void calcular_frequencia(FILE* arquivo, unsigned int frequencias[TAM_ALFABETO]); //Lê o arquivo e conta quantas vezes cada caractere aparece
+void inicializar_fila(FilaPrioridade* fila, unsigned int frequencias[TAM_ALFABETO]); //Cria os nós da árvore com base nas frequências e os insere na fila de prioridade
+void gerar_tabela_codigos(No* raiz, Codigo tabela[TAM_ALFABETO], Codigo atual); //Gera a tabela de códigos binários (Huffman) a partir da árvore construída
 void compactar(const char* nome_entrada, const char* nome_saida);
 void descompactar(const char* nome_entrada, const char* nome_saida);
 
